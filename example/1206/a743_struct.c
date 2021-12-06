@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct country{
+typedef struct country{
     char name[76];
     int people;
-}typedef country;
+}country;
 
 int main()
 {
