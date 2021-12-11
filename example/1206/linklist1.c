@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
+struct linklist {
     int val;
-    struct node *next;
+    struct linklist *next;
 } typedef Node;
 
-int main()
-{
+Node *initial(){
     Node *head = (Node *)malloc(sizeof(Node));
     head->val = 1;
     Node *p = head;
@@ -18,6 +17,12 @@ int main()
         p = p->next;
     }
     p->next = NULL;
+    return head;
+}
+
+int main()
+{
+    Node *head = initial();
     p = head;
     while (p) {
         printf("%d ", p->val);
