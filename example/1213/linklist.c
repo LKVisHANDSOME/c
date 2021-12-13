@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
+typedef struct node
+{
     int val;
     struct node *next;
 } Node;
@@ -38,11 +39,13 @@ void travelsal(Node *head)
 {
     // while 版
     Node *p = head;
-    while (p != NULL) {
+    while (p != NULL)
+    {
         p = p->next;
     }
     // for 版
-    for (Node *p = head; p != NULL; p = p->next) {
+    for (Node *p = head; p != NULL; p = p->next)
+    {
         ;
     }
 }
@@ -55,16 +58,16 @@ int main()
 
     // 初始化長度為9的linklist (1,2,3,4,5,6,7,8,9)
     Node *p = head;
-    for (int i = 2; i < 10; i++) {
-        Node *newnode = (Node *)malloc(sizeof(Node));
-        newnode->val = i;
-        newnode->next = NULL;
+    for (int i = 2; i < 10; i++)
+    {
+        Node *newnode = generate_node(i);
         p->next = newnode;
         p = p->next;
     }
     // 利用while迴圈和linklist尾端的next指向NULL的特性遍歷linklist
     p = head;
-    while (p != NULL) {
+    while (p != NULL)
+    {
         printf("%d ", p->val);
         p = p->next;
     }
@@ -74,21 +77,24 @@ int main()
     p = head;
     int cnt = 1;
     int target = 5;
-    while (cnt != target) {
+    while (cnt != target)
+    {
         p = p->next;
         cnt++;
     }
     printf("%d\n", p->val);
     // 創一個val=10的新node
-    Node *newnode = (Node *)malloc(sizeof(Node));
-    newnode->val = 10;
+    // Node *newnode = (Node *)malloc(sizeof(Node));
+    // newnode->val = 10;
     //將6先存到temp，將5指向10，10指向6，就成功完成了5->10->6的操作
-    Node *temp = p->next;
-    p->next = newnode;
-    newnode->next = temp;
+    Node *temp;
+    // p->next = newnode;
+    // newnode->next = temp;
+    insert(p, 10);
     p = head;
     // print出來確認修改正確
-    while (p) {
+    while (p)
+    {
         printf("%d ", p->val);
         p = p->next;
     }
@@ -98,15 +104,15 @@ int main()
     // 我們要讓6->7->8變成6->8，所以我們要先走到6(head往後走6格)
     int x = 6;
     p = head;
-    while (x--) {
+    while (x--)
+    {
         p = p->next;
     }
     //將7的位置先存進temp，把6指向8，把7 free掉
-    temp = p->next;
-    p->next = temp->next;
-    free(temp);
+    delete(p);
     p = head;
-    while (p) {
+    while (p)
+    {
         printf("%d ", p->val);
         p = p->next;
     }
