@@ -17,7 +17,9 @@ int main()
         printf("%d ", arr[i]);
     }
     printf("\n");
+
     qsort(arr, 10, sizeof(int), cmp);
+    
     for (int i = 0; i < 10; i++) {
         printf("%d ", arr[i]);
     }
