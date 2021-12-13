@@ -40,6 +40,7 @@ int main()
 
     Node *queue[10];
     queue[0] = root;
+    // 1 2 3 
     int front = 0, rear = 1, depth = 0;
     while (front != rear) {
         int n = rear - front;

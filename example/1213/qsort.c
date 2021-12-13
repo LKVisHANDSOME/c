@@ -11,16 +11,16 @@ int cmp(const void *a, const void *b)
 
 int main()
 {
-    int arr[10];
-    for (int i = 0; i < 10; i++) {
+    int arr[20];
+    for (int i = 0; i < 20; i++) {
         arr[i] = rand() % 1000;
         printf("%d ", arr[i]);
     }
     printf("\n");
 
-    qsort(arr, 10, sizeof(int), cmp);
+    qsort(arr, 20, sizeof(int), cmp);
     
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 20; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
