@@ -40,7 +40,6 @@ int main() {
             country[country_cnt++].people_cnt = 1;
         }
     }
-    printf("%u , %u , %u\n",sizeof(char),sizeof(int),sizeof(Country));
     qsort(country,country_cnt,sizeof(Country),cmp);
 
     for(int i=0;i<country_cnt;i++){
