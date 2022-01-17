@@ -9,10 +9,7 @@ typedef struct country{
 
 int cmp(const void *a, const void *b)
 {
-    int ret = strcmp(((Country*)a)->name,((Country*)b)->name);
-	if (ret>0) return 1;
-	if (ret<0) return -1;
-	return 0;
+    return strcmp(((Country*)a)->name,((Country*)b)->name);
 }
 
 int main() {
@@ -20,17 +17,14 @@ int main() {
     scanf("%d",&n);
     Country country[2000];
     int country_cnt=0;
+    char s[75], name[75];
     while(n--){
-        char s[75];
         scanf("%s",s);
-        // printf("%s",s);
-        char name[75];
         fgets(name,75,stdin);
         int flag=1;
         for(int i=0;i<country_cnt;i++){
             if(strcmp(country[i].name,s)==0){
                 flag=0;
-                int flag2=1;
                 country[i].people_cnt++;
                 break;
             }
@@ -40,13 +34,11 @@ int main() {
             country[country_cnt++].people_cnt = 1;
         }
     }
-    printf("%u , %u , %u\n",sizeof(char),sizeof(int),sizeof(Country));
     qsort(country,country_cnt,sizeof(Country),cmp);
 
     for(int i=0;i<country_cnt;i++){
         printf("%s %d\n",country[i].name,country[i].people_cnt);
     }
-
 
     system("pause");
     return 0;

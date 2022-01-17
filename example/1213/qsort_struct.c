@@ -16,7 +16,7 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    Country country[10];
+    Country country[n];
     printf("not sort :\n");
     for (int i = 0; i < n; i++) {
         scanf("%s%d", &country[i].name,&country[i].cnt);
