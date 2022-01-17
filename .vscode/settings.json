@@ -4,6 +4,7 @@
     "files.associations": {
         "stdio.h": "c",
         "test.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "*.tcc": "cpp"
     }
 }
