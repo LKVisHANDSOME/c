@@ -15,9 +15,16 @@ int main(){
     cout << m.count("ten") << endl;     // 0 -> 沒有對應
 
     cout << m["two"] << endl;
+    if(m.count("ten")){
+        cout << m["ten"] << endl;
+    }
+    else{
+        cout << "404\n";
+    }
 
-    for(auto &it:m){
-        cout << m.firtst << " " << m.second << endl;
+
+    for(auto &x:m){
+        cout << x.first << " " << x.second << endl;
     }
 
     system("pause");

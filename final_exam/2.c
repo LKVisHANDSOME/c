@@ -25,7 +25,7 @@ int main()
 {
 	struct pair* myData=(struct pair*)malloc(95*sizeof(struct pair));
     char str[128];
-    while(scanf("%s",&str)!=EOF){
+    while(gets(str)!=NULL){
         int cnt=0;
         int n=strlen(str);
         for(int i=0;i<n;i++){

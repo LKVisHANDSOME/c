@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+<<<<<<< HEAD
 void print_set(set<int> &st){
     for(auto&x:st){
         cout << x << " ";
@@ -31,6 +32,25 @@ int main() {
     else{
         cout << target << " is not found" << endl;
     }
+=======
+int main(){
+    multiset<int> st({1,2,3});
+    for(auto &x:st){
+        cout << x << " ";
+    }
+    cout << endl;
+    st.insert(3);
+    for(auto &x:st){
+        cout << x << " ";
+    }
+    cout << endl;
+    auto it = st.find(3);
+    st.erase(it);
+    for(auto &x:st){
+        cout << x << " ";
+    }
+    cout << endl;
+>>>>>>> 44e14c0c4a4e34fb135e6ba939ff0adaca576fc5
     system("pause");
     return 0;
 }
